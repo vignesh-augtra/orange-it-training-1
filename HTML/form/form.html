@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" value="hashskills" placeholder="Enter ur name" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password"  placeholder="Enter password" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="number" required min="0" max="100" step="0.5" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>resume</td>
+                    <td>
+                        <input type="file" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>DOB</td>
+                    <td>
+                        <input type="date" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Appointment time</td>
+                    <td>
+                        <input type="time" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Appointment date and time</td>
+                    <td>
+                        <input type="datetime-local" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="email" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Color</td>
+                    <td>
+                        <input type="color" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Degree</td>
+                    <td>
+                        <select>
+                            <option value="UG">Under Graduation</option>
+                            <option value="PG">Post Graduation</option>
+                            <option value="" disabled selected>--choose degree--</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" value="male" name="gender" />Male
+                        <input type="radio" value="female" name="gender" />Female
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox"> Agree T&C
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    
+</body>
+</html>
