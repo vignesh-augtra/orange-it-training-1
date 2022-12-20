@@ -1,0 +1,20 @@
+.table-1{
+    background-color: black;
+}
+
+.submit-btn{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.submit-btn:hover{
+    background-color: yellow !important;
+}
+
+table.table-1 .submit-btn{
+    background-color: lightgreen;
+}
+
+.table-2 .submit-btn{
+    background-color: green;
+}
