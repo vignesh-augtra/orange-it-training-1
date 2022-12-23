@@ -1,0 +1,12 @@
+body{
+    background: rgba(255, 237, 73, 0.421)
+}
+
+.glossy-effect{
+    opacity: 0.8;
+}
+
+.text-container{
+    height: 43vh;
+    overflow:auto;
+}

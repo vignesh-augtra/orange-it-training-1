@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <style>
+            main{
+                background-color: teal;
+                height: 100%;
+                width: 100%;
+                padding-top: 20px;
+            }
+
+            div.placeholder{
+                height: 30px;
+                background-color: wheat
+            }
+        </style>
+    </head>
+
+
+
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a id="toggle-btn" onclick="toggleContainer()">
+                        OFF
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="container" id="my-container">
+                
+                <div class="row">
+                    <div class="col s4 offset-s4">
+                        <div class="placeholder"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <div class="placeholder"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <div class="placeholder"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <div class="placeholder"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <div class="placeholder"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <div class="placeholder"></div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+
+        <script>
+
+            let isContainerShown = true; // true - ON; false - OFF
+
+            function toggleContainer(){
+                isContainerShown = !isContainerShown;
+                if(isContainerShown){
+                    document.getElementById("toggle-btn").innerHTML = "OFF";
+                    document.getElementById("my-container").classList.add("container")
+                } else {
+                    document.getElementById("toggle-btn").innerHTML = "ON";
+                    document.getElementById("my-container").classList.remove("container")
+                }
+            }
+
+        </script>
+    </body>
+</html>
