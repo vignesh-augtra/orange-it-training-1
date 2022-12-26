@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="./styles/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+    <nav class="todo-mainpage-topnav">
+        <ul class="right">
+            <li>
+                <a>home</a>
+            </li>
+
+            <li>
+                <a>Contact</a>
+            </li>
+
+            <li>
+                <a>About</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div>
+        <a class="btn modal-trigger" data-target="modal1">Modal 1</a>
+        <a class="btn" onclick="openModal2()">Modal 2</a>
+    </div>
+
+
+        <!-- Modal 1 -->
+
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+                <p>Modal 1 content</p>
+            </div>
+
+            <div class="modal-footer">
+                <a class="btn modal-close">Cancel</a>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+
+        <div class="modal" id="modal2">
+            <div class="modal-content">
+                <p>Modal 2 content</p>
+            </div>
+
+            <div class="modal-footer">
+                <a class="btn">Cancel</a>
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
+
+    
+
+    <script src="./js/index.js"></script>
+
+
+
+</body>
+
+</html>
