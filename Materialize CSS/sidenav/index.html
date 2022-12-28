@@ -1,0 +1,91 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+
+    <button class="btn red modal-trigger" data-target = "center-modal">Modal</button>
+
+    <button class="btn orange sidenav-trigger" data-target="xyz">Sidenav</button>
+
+    <button class="btn" onclick="showToast()">Toast</button>
+
+
+
+    <div class="modal modal-fixed-footer bottom-sheet" id="center-modal">
+        <div class="modal-content">
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+            <p>edgdfgdfg</p>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn red modal-close">Close</button>
+        </div>
+    </div>
+
+    
+    <ul class="sidenav" id="xyz">
+        <li>
+            <a>Contact</a>
+        </li>
+        <li>
+            <a>About</a>
+        </li>
+    </ul>
+
+
+    <script>
+
+        $(document).ready(function(){
+            $(".modal").modal()
+            $(".sidenav").sidenav({
+                edge:"right"
+            })
+        })
+
+        // let showToast = function(){
+
+        // }
+
+        function showToast(){
+            M.toast({
+                html:"Hi, Welcome!",
+                classes : "yellow red-text rounded",
+                displayLength:1000
+            })
+        }
+
+    </script>
+
+</body>
+</html>
