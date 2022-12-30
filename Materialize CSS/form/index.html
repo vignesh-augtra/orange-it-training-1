@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Contact Form</title>
+</head>
+
+<body class="orange lighten-3">
+
+    <!-- Top nav bar -->
+    <nav class="orange">
+        <ul>
+            <li>
+                <a class="brand-logo right">
+                    HashSkills
+                </a>
+            </li>
+            <li>
+                <a class="sidenav-trigger show-on-large" data-target="main-sidenav">
+                    <i class="material-icons">menu</i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Side nav -->
+
+    <ul class="sidenav" id="main-sidenav">
+
+        <li>
+            <a>Contact</a>
+        </li>
+        <li>
+            <a>Address</a>
+        </li>
+        <li>
+            <a>Home</a>
+        </li>
+    </ul>
+
+    <!-- form -->
+
+    <form >
+       <div >
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <h5>Join our Team</h5>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col s12 input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <label for="name-textbox" >Name</label>
+                                <input id="name-textbox" type="text" required class="validate"/>
+                                <span class="helper-text" data-success="Good to go!" data-error="Please fill the field"></span>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col s12 input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <label for="age-textbox" >Age</label>
+                                <input id="age-textbox" type="number" 
+                                min="18"
+                                max="100"
+                                required 
+                                class="validate"/>
+                                <span class="helper-text" data-success="Good to go!" data-error="Please fill valid data"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s4">
+                                <label>Gender</label>
+                            </div>
+                            <div class="col s4">
+                                <p>
+                                    <label>
+                                        <input type="radio" class="with-gap" value="male" name="gender" required/>
+                                        <span>Male</span>
+                                    </label>
+                                </p>
+                            </div>
+
+                            <div class="col s4">
+                                <p>
+                                    <label>
+                                        <input type="radio" class="with-gap" value="female" name="gender" required/>
+                                        <span>Female</span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s4">
+                                <label>Agree T&C</label>
+                            </div>
+                            <div class="col s8">
+                                <p>
+                                    <label>
+                                        
+                                        <input type="checkbox" name="agree" class="filled-in" />
+                                        <span>Agree T&C</span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 input-field">
+                                <i class="material-icons prefix">date_range</i>
+                                <label for="dob-textbox">Date of Birth</label>
+                                <input type="text" class="datepicker"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 input-field">
+                                <label class="active">Degree</label>
+                                <select>
+                                    <option value="" selected disabled>--choose--</option>
+                                    <option value="SSLC" >10th Standard</option>
+                                    <option value="HSC" >12th Standard</option>
+                                    <option value="UG" >Under-Gradudation</option>
+                                    <option value="PG" >Post-Gradudation</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-action">
+                        <button class="btn green">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </form>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./controller.js"></script>
+
+</body>
+
+</html>
