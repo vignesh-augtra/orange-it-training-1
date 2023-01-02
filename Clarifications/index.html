@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+        ul.button-set {
+            display: flex;
+        }
+
+        ul.button-set button {
+            box-shadow: none !important;
+        }
+
+        span.field-icon {
+            float: left;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .iconic-textbox{
+            padding-left: 35px !important;
+            border: 1px dashed red !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    
+
+    <ul class="button-set">
+        <li>
+            <button class="btn">
+                <i class="material-icons">arrow_back</i>
+            </button>
+        </li>
+        <li>
+
+            <h5 class="no-margin">Today</h5>
+
+        </li>
+        <li>
+            <button class="btn">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </li>
+    </ul>
+
+
+    <div class="row ">
+        <div class="col s5 input-field ">
+            <input type="password" placeholder="Enter Password" required class="validate iconic-textbox" id="login-password-textbox" />
+            <label class="active" for="login-password-textbox">Password</label>
+
+            <span class="field-icon">
+                <span class="material-icons" viewing="true" id="password-eye">visibility</span></span>
+        </div>
+    </div>
+
+</body>
+
+</html>
