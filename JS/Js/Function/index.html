@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // default parameter
+        function addTwoNumbers(num1 = 2, num2 = 0) {
+            console.log("First statement")
+            return num1 + num2
+        }
+
+        function checkIfEven(num){
+            if(num % 2 == 0){
+                return true
+            } else {
+                return false
+            }
+        }
+
+        // spread operator
+        function addAllNumbers(...numbers) {
+            let sum = 0;
+            // numbers.forEach(function (oneNumber) {
+            //     if(checkIfEven(oneNumber)){
+            //         sum = sum + oneNumber
+            //     }
+                
+            // })
+
+            
+            // for(let i = 0 ; i < numbers.length; console.log("next...") ){
+            //     sum = sum + numbers[i];
+            //     i++;
+            // }
+
+            let i = 0;
+            while(i < numbers.length){
+                
+                if(checkIfEven(numbers[i])){
+                    sum = sum + numbers[i];
+                }
+                i++;
+            }
+            return sum;
+
+        }
+
+        let result = addTwoNumbers(undefined, 63);
+        console.log(result)
+
+        let sumOfAllNumbers = addAllNumbers(1, 2, 3, 4, 5, 5, 10, 5, 10, 3);
+        console.log({ sumOfAllNumbers })
+
+
+
+
+    </script>
+
+</body>
+
+</html>

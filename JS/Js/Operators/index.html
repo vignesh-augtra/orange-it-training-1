@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // increment
+
+        let a = 10; // 12
+
+        let b = ++a;
+        let c = a++;
+
+
+        console.log({a}) // 10 - 12
+        console.log({b}) // 11 - 11
+        console.log({c}) // 11 - 11
+
+        // comparison:
+
+        let a1 = 8, b1 = "8";
+
+        console.log(a1 === b1);
+
+
+        // short circuit in logical op
+        // && - AND
+        // a   b   Result
+        // 1   0   0
+        // 1   1   1
+        // 0   0   0
+        // 0   1   0
+
+        // || - OR
+        // a   b   Result
+        // 1   0   1
+        // 1   1   1
+        // 0   0   0
+        // 0   1   1
+
+        let v1 = 7 == 17 || console.log("stop sharing");
+        console.log({v1})
+
+        
+
+    </script>
+
+</body>
+</html>
