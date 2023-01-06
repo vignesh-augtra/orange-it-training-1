@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let names = ["selvi", "karthik", "Rajkumar",  "Ashif"];
+        
+        // let messages = names.map(function(oneName){
+        //     return "Hi, " + oneName
+        // })
+
+        // for(let oneName of names){
+        //     console.log(oneName)
+        // }
+
+        // for(let i = 1 ; i <= 5 ;i++){
+        //     if(i == 2){
+        //         continue;
+        //     }
+
+        //     if(i == 3){
+        //         break;
+        //     }
+        //     console.log(i)
+        // }
+
+        // for(let i = 0 ; i < 5; i++){
+        //     for(let j = 0 ; j < 3 ;j++){
+        //         console.log(i, j)
+        //     }
+        // }
+
+        // do{
+
+        // } while(condition)
+
+        // let students = {
+        //     name : "vignesh",
+        //     age : 26,
+        //     city : "coimbatore"
+        // }
+
+        // for(let k in students){
+        //     console.log(students[k])
+        // }
+
+        let sumOfEvenNumber = 0;
+        let sumOfOddNumber = 0;
+
+        let sum = {
+            odd:0,
+            even:0
+        }
+
+        for(let i = 1 ; i <= 100; i++){
+            if(i%2 == 0){
+                // even
+                // sumOfEvenNumber = sumOfEvenNumber + i;
+                sum.even += i 
+            } else {
+                // odd
+                // sumOfOddNumber = sumOfOddNumber + i;
+                sum.odd += i 
+            }
+        }
+
+        console.log({sum})
+
+    
+
+    </script>
+    
+</body>
+</html>
