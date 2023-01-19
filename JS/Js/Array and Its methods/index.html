@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="addToArray(event)">
+        <input type="number" id="abc" required/>
+        <input type="submit"/>
+    </form>
+
+    <button onclick="getValue()">Get Value</button>
+
+    <script>
+
+    //    let names = ["a1", "a2"]; // array of Strings
+    //    let ages = [38, 67]; // array of Numbers
+    //    let students = [
+    //     {
+    //         name : "Vignesh",
+    //         age:26
+    //     },
+    //     {
+    //         name : "Ashif",
+    //         age:23
+    //     }
+    //    ] // array of Object
+
+    //    let matrix = [[1, 1], [2, 3]] // multidimnsional Array - 2D;
+
+    //    console.log(matrix[1][1]);
+
+    //    console.log(ages.indexOf(318));
+    //    ages.push(52);
+    //    console.log(ages);
+
+    //    ages.pop();
+
+    //    console.log(ages);
+
+
+    //    ages.unshift(123);
+
+    //    console.log(ages)
+
+    //    ages.shift();
+    //    console.log(ages)
+
+    //    ages.push(51);
+    //    ages.push(53);
+    //    ages.push(54);
+    //    ages.push(55);
+    //    ages.push(56);
+    //    ages.push(57);
+
+    //    console.log(ages.join("#"));
+
+    //    console.log(ages)
+
+    //    let idxOfDesiredNumber = ages.indexOf(51);
+
+    //    if(idxOfDesiredNumber != -1){
+    //     ages.splice(idxOfDesiredNumber, 1, 51.5, 51.7)
+    //    }
+
+    //    let nums = [1, 2, 3, 4, 6, 7, 8, 9];
+
+    //    let arr1 = nums.slice(0, 4);
+    //    let arr2 = nums.slice(4);
+
+    //    arr1.push(5)
+
+    // // let result = arr1.concat(arr2)
+    //    let result = [...arr1, ...arr2] // array destructing
+
+    //    console.log(result)
+
+    
+    let ages = []
+
+       let addToArray = (e)=>{
+        e.preventDefault()
+
+        ages.push(e.target[0].valueAsNumber);
+
+        console.log(ages)
+       }
+
+    let getValue = ()=>{
+        if(document.getElementById("abc").value){
+            ages.push(Number(document.getElementById("abc").value));
+        }
+
+        
+
+        console.log(ages)
+    }
+
+
+    </script>
+    
+</body>
+</html>
