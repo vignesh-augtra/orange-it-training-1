@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="canvas"></canvas>
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const imgTag = document.createElement("img");
+            const canvasTag = document.getElementById("canvas");
+            const context = canvasTag.getContext("2d");
+            const buffer = 100
+
+            let bbox = {
+                height: 448.31591796875 + buffer,
+                width:271.11767578125 + buffer,
+                x:729.5 - buffer,
+                y:1307 - buffer,
+            }
+
+            console.log(bbox)
+
+            imgTag.onload = () => {
+                canvasTag.height = bbox.height
+                canvasTag.width = bbox.width
+                context.drawImage(imgTag, bbox.x, bbox.y,
+                    bbox.width + buffer ,
+                    bbox.height + buffer, 0, 0, canvasTag.width , canvasTag.height)
+            }
+
+            imgTag.src = "./oa_image.jpg"
+
+        })
+
+    </script>
+
+</body>
+
+</html>
