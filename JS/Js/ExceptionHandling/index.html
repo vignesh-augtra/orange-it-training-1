@@ -1,0 +1,37 @@
+<html>
+
+
+<body>
+
+    <script>
+
+        let add = function (...inputParam) {
+            try {
+                let sum = 0;
+                inputParam.forEach(function (oneValue) {
+                    try {
+                        sum += oneValue1;
+
+                        if(sum == 3){
+                            throw("Sum is 3")
+                        }
+                    } catch (e) {
+                        console.log("1")
+                        alert(e)
+                    }
+
+                })
+                console.log({ sum })
+            } catch (e) {
+                console.log("2")
+                alert(e)
+            }
+        }
+
+        add(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+    </script>
+
+</body>
+
+</html>

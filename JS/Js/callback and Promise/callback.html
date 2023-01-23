@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <script>
+
+// JAVASCRIPT IS ASYNC IN NATURE
+
+            let one = ()=>{
+                console.log("1")
+            }
+
+            let two = (callback)=>{
+
+                let v = function(){
+                    console.log("2");
+                    callback();
+                };
+
+                setTimeout(v, 2000)
+            }
+
+            let twoPfive = ()=>{
+                console.log("2.5")
+            }
+
+            let three = ()=>{
+                console.log("3")
+            }
+
+            one();
+            two(three);
+            
+
+            
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+
+<body>
+    <script>
+
+        // JAVASCRIPT IS ASYNC IN NATURE
+
+        let one = () => {
+            console.log("1")
+        }
+
+        let two = () => {
+
+            return new Promise(function (resolve, reject) {
+                try {
+                    setTimeout(() => {
+                        console.log("2");
+                        // resolve();
+                        reject();
+                    }, 2000)
+                } catch (e) {
+                    alert(e)
+                }
+            })
+        }
+
+        let three = () => {
+            console.log("3")
+        }
+
+        let main = async () => {
+            one()
+            // await two()
+
+            two().then(
+                //success callback - resolve
+                function () {
+                    console.log("success...");
+                    three();
+                },
+
+                // failure cb - reject
+                function () {
+                    console.log("failed...")
+                })
+
+
+        }
+
+        main()
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
