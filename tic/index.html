@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <script>
+
+        let board = [
+            ["X", "O", "X"],
+            [" ", " ", " "],
+            ["O", "A", " "],
+        ];
+
+        let columnIndex = {
+            "A":0,
+            "B":1,
+            "C":2,
+        }
+
+        let rowIndex = {
+            "1":0,
+            "2":1,
+            "3":2,
+        }
+
+        let userInput = "B3";
+        if(userInput.length == 2){
+            let rowName = userInput.charAt(1); // userInput[1] == > "3"
+            let columnName = userInput.charAt(0); // ==> "A"
+            let rowNameIndex = rowIndex[rowName];
+            let colNameIndex = columnIndex[columnName];
+            console.log(board[rowNameIndex][colNameIndex])
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
