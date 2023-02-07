@@ -1,0 +1,85 @@
+<html>
+
+<body>
+
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" required id="input-numbers" />
+        <input type="submit" />
+    </form>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        let handleSubmit = async (e) => {
+            e.preventDefault();
+            // let listOfNumbers = document.getElementById("input-numbers").value;
+            let listOfNumbers = e.target[0].value;
+            listOfNumbers = listOfNumbers.split(",");
+
+            // let sumResult = await addSync(listOfNumbers);
+
+            addSync(listOfNumbers).then(function(result){
+                console.log("success")
+                console.log(result)
+            }, 
+            function(){
+                console.log("Failed")
+            })
+
+            // console.log({sumResult})
+
+            // console
+            addAsync(listOfNumbers, function(result) {
+                console.log(result)
+            })
+
+            // DOM
+            addAsync(listOfNumbers, function(result) {
+                document.querySelector("#result").innerHTML = result
+            })
+
+
+            //alert
+            addAsync(listOfNumbers, function(result) {
+                alert(result)
+            })
+        }
+
+        let addAsync = (numbers, callback) => {
+
+            let sum = 0;
+            numbers.forEach((oneNumber, index) => {
+                sum += Number(oneNumber);
+
+                if (index == numbers.length - 1) {
+                    callback(sum);
+                }
+            });
+
+
+        }
+
+        let addSync = (numbers)=>{
+            return new Promise(function(finished, failed){
+                let sum = 0;
+                numbers.forEach((oneNumber, index) => {
+                sum += Number(oneNumber);
+
+                if (index == numbers.length - 1) {
+                    finished(sum);
+                }
+            });
+            })
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

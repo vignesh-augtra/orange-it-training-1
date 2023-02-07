@@ -43,6 +43,10 @@ let scroll_and_pan = () => {
         initialZoomScaleY = 1,
         zoomScaleX = initialZoomScaleX,
         zoomScaleY = initialZoomScaleY,
+        //panning related
+        startCoords = { x: 0, y: 0 },
+        lastPosition = { x: 0, y: 0 },
+        isMouseDown = false,
 
         canvasContainer = document.querySelector('#abc'),
         speed = 0.09,
@@ -82,6 +86,32 @@ let scroll_and_pan = () => {
     }
 
     canvasContainer.addEventListener('wheel', wheelEvent, { passive: false });
+
+    canvasContainer.onmousemove = function (e) {
+        var xVal = e.pageX - this.offsetLeft,
+                yVal = e.pageY - this.offsetTop;
+
+            if (isMouseDown) {
+                canvasContainer.style.transform = `matrix(${zoomScaleX},0,0,${zoomScaleY},${xVal - startCoords.x},${yVal - startCoords.y})`;
+            }
+    };
+
+    canvasContainer.onmousedown = function (e) {
+        isMouseDown = true;
+            startCoords = {
+                x: e.pageX - this.offsetLeft - pos.x,
+                y: e.pageY - this.offsetTop - pos.y
+            };
+
+    };
+
+    canvasContainer.onmouseup = function (e) {
+        isMouseDown = false;
+        pos = {
+            x: e.pageX - this.offsetLeft - startCoords.x,
+            y: e.pageY - this.offsetTop - startCoords.y
+        };
+    };
 }
 
 scroll_and_pan();

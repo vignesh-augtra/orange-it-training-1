@@ -1,0 +1,42 @@
+<html>
+    <body>
+
+        <h1 id="date-here"></h1>
+
+        <script>
+
+            function zeroAppender(value){
+                return value <= 9 ? `0${value}` : value;
+            }
+
+            function createDate(){
+                let systemDate = new Date();
+
+            let monthEnum = {
+                0:"Jan",
+                1:"Feb",
+                2:"Mar"
+            }
+
+            let currentMonth = monthEnum[systemDate.getMonth()];
+            let currentDate = systemDate.getDate();
+            let currentYear = systemDate.getFullYear();
+            let currentHour = systemDate.getHours();
+            let currentMinute = systemDate.getMinutes();
+            let currentSeconds = systemDate.getSeconds();
+
+            currentDate = zeroAppender(currentDate)
+            currentHour = zeroAppender(currentHour)
+            currentMinute = zeroAppender(currentMinute)
+            currentSeconds = zeroAppender(currentSeconds)
+
+            document.getElementById("date-here").innerHTML = `${currentMonth} ${currentDate}, ${currentYear}. ${currentHour}:${currentMinute}:${currentSeconds}`
+            }
+
+
+            setInterval(createDate, 1000)
+
+        </script>
+
+    </body>
+</html>
