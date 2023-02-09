@@ -1,0 +1,86 @@
+<html>
+    <body>
+
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="lap()">Lap</button>
+        <button onclick="reset()">Reset</button>
+
+        <h1 id="timer"></h1>
+
+        <div id="laps">
+
+        </div>
+
+        <script>
+
+            var timer = {
+                hours:0,
+                mins:0,
+                sec:0,
+                ms:0
+            };
+            var timerInterval = -1;
+
+            let start = ()=>{
+
+                console.log(timerInterval)
+
+                if(timerInterval != -1){
+                    return
+                }
+
+                timerInterval = setInterval(()=>{
+                    timer.ms++;
+                    if(timer.ms > 9){
+                        timer.sec++;
+                        timer.ms = 0;
+                    }
+
+                    if(timer.sec > 59){
+                        timer.mins++;
+                        timer.sec = 0;
+                    }
+
+                    if(timer.mins > 59){
+                        timer.hours++;
+                        timer.mins = 0;
+                    }
+
+                    document.getElementById("timer").innerHTML = `${timer.hours}:${timer.mins}:${timer.sec}:${timer.ms}`
+                }, 100)
+
+            }
+
+            let stop = ()=>{
+                clearInterval(timerInterval);
+                timerInterval = -1;
+            }
+
+            let reset = ()=>{
+                timer = {
+                hours:0,
+                mins:0,
+                sec:0,
+                ms:0
+            }
+
+            document.getElementById("timer").innerHTML = `${timer.hours}:${timer.mins}:${timer.sec}:${timer.ms}`
+            }
+
+
+            let lap = ()=>{
+                let snapShot = `${timer.hours}:${timer.mins}:${timer.sec}:${timer.ms}`;
+
+                let pTag = document.createElement("p");
+                pTag.innerHTML = snapShot;
+
+
+                document.getElementById("laps").appendChild(pTag);
+
+            }
+
+        </script>
+
+    </body>
+</html>
