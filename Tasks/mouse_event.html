@@ -1,0 +1,35 @@
+<html>
+
+    <head>
+        <style>
+            .abc{
+                height: 500px;
+                width: 500px;
+                border:1px solid red;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="abc" id="my-div">
+
+        </div>
+
+        <script>
+
+            document.getElementById("my-div").addEventListener("mouseleave", (e)=>{
+                alert("Dont go. please")
+            })
+
+            document.getElementById("my-div").addEventListener("mousedown", (e)=>{
+                console.log(e)
+            })
+
+            document.onkeydown = (e)=>{
+                console.log(e)
+            }
+
+        </script>
+    </body>
+</html>
