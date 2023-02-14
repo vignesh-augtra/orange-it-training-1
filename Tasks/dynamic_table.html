@@ -5,9 +5,11 @@
     <form onsubmit="handleFormSubmit(event)">
         <label>Name</label>
         <input type="text" required/>
-
+<br/>
         <label>Age</label>
-        <input type="number" required/>
+        <input type="number" required/><br/>
+        <label>mail</label>
+        <input type="text" required/><br/>
 
         <input type="submit"/>
     </form>
@@ -20,6 +22,7 @@
             let data = {
                 name : e.target[0].value,
                 age : e.target[1].value,
+                mail : e.target[2].value,
             }
             addDataToTable(data)
         }
