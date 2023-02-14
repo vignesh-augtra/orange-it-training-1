@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+    </script>
+</head>
+
+
+<body ng-app="Orange">
+
+
+    <div ng-controller="landingPage">
+
+        <h1> {{message}} </h1>
+
+        <input type="text" ng-model="tbValue" />
+
+        <p> {{tbValue}} </p>
+
+        <button ng-click="changeMessage()">Change</button>
+
+    </div>
+
+    <div ng-controller="loginPage">
+        <h1> message </h1>
+    <h1> {{message}} </h1>
+    <button ng-click="onBtnClick()" >Validate Pass</button>
+    </div>
+
+    <div ng-controller="formController">
+        <form ng-submit="checkAge()">
+            <label> {{label}} </label>
+            <input type="number" ng-model="currentAge" min="0"/>
+            <input type="submit"/>
+        </form>
+    </div>
+
+    <script>
+        const myapp = angular.module("Orange", []);
+
+        myapp.controller("landingPage", function ($scope, valildate_password) {
+            $scope.message = "Hello world";
+            $scope.tbValue = "Selvi";
+            $scope.changeMessage = function () {
+                $scope.message = "Hello world 123";
+            }
+        })
+
+        myapp.controller("loginPage", function($scope, valildate_password){
+            $scope.message = "Hi,  How are you";
+
+            $scope.onBtnClick = ()=>{
+                let status = valildate_password.checkIfPasswordIsValid("vignesh");
+                console.log(status)
+            }
+        })
+
+        myapp.service("valildate_password", function(){
+
+            this.checkIfPasswordIsValid = function(pswrd){
+                if(pswrd == "vignesh"){
+                    return true
+                } else {
+                    return false
+                }
+            }
+
+        } )
+
+
+        myapp.controller("formController", function($scope){
+            $scope.label = "Enter yor age here to verify";
+
+            $scope.checkAge = function(){
+                console.log($scope.currentAge)
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
