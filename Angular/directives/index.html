@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+    </script>
+</head>
+
+    <body ng-app="myapp" ng-controller="ctrlA">
+
+        <input type="checkbox" ng-model="isDisabled"/>
+
+        <button ng-disabled="isDisabled">Click me</button>
+
+        <div ng-if="isDisabled">
+            <p>I am visible</p>
+        </div>
+
+        <ul>
+            <li ng-repeat="s in students" > {{s}} </li>
+        </ul>
+
+        <table border="1">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="so in studentsObject">
+                    <td> {{so.name}} </td>
+                    <td ng-bind="so.age" ></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script>
+            const app = angular.module("myapp", []);
+
+            app.controller("ctrlA", function($scope){
+                $scope.isDisabled = true;
+
+                $scope.students = ["vignesh", "Karthik", "Rajkumar", "Selvi"];
+
+                $scope.studentsObject = [
+                    {
+                        name : "Vigesh",
+                        age : 18
+                    },
+
+                    {
+                        name : "AAAAAA",
+                        age : 180
+                    },
+                    {
+                        name : "BBBBB",
+                        age : 1800
+                    }
+                ]
+            })
+        </script>
+
+    </body>
+    
+
+</html>

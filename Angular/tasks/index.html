@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+    </script>
+
+    <script src="./app.js"></script>
+    <script src="./controller/timer_controller.js"></script>
+</head>
+
+
+    <body ng-app="timer" >
+
+        <div ng-controller="timerController" ng-init="startCounter()">
+            {{5 > 5}}
+            <h1 ng-bind="counter"></h1>
+            <h1 ng-bind="getName()"></h1>
+        </div>
+        
+        
+
+    </body>
+
+</html>

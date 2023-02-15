@@ -1,0 +1,1 @@
+const timer = angular.module("timer", []);
