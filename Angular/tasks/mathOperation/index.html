@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+    </script>
+
+
+</head>
+
+
+    <body ng-app="math">
+
+       <div ng-controller="operation">
+
+        <div>
+            <input type="number" ng-model="num1"/>
+            <input type="number" ng-model="num2"/>
+
+            <button ng-click="add()">Add</button>
+            <button ng-click="sub()">Sub</button>
+            <button ng-click="div()">Div</button>
+            <button ng-click="mul()">Mul</button>
+        </div>
+
+        <div id="result"></div>
+
+       </div>
+
+       <script>
+        const mathModule = angular.module("math", []);
+
+        mathModule.controller("operation", function($scope){
+
+            $scope.add = ()=>{
+                let result = $scope.num1 + $scope.num2;
+                bindResult(`${$scope.num1} + ${$scope.num2} = ${result}`)
+            }
+
+            $scope.mul = ()=>{
+                let result = $scope.num1 * $scope.num2;
+                bindResult(`${$scope.num1} * ${$scope.num2} = ${result}`)
+            }
+
+            $scope.div = ()=>{
+                let result = $scope.num1 / $scope.num2;
+                bindResult(`${$scope.num1} / ${$scope.num2} = ${result}`)
+            }
+
+            $scope.sub = ()=>{
+                let result = $scope.num1 - $scope.num2;
+                bindResult(`${$scope.num1} - ${$scope.num2} = ${result}`)
+            }
+
+            let bindResult = (content)=>{
+                let pTag = document.createElement("p");
+                pTag.innerHTML = content;
+                document.getElementById("result").appendChild(pTag);
+                
+            }
+
+            
+
+
+        })
+       </script>
+        
+
+    </body>
+
+</html>

@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+    </script>
+
+
+</head>
+
+
+    <body ng-app="math">
+
+       <div ng-controller="operation">
+
+        <input type="text" ng-model="username" />
+        <button ng-click="addToList()">Add</button>
+        <button ng-click="getUsers()">getUsers</button>
+
+        <p>namesList</p>
+        <ul>
+            <li ng-repeat="n in namesList">
+                {{n}}
+            </li>
+        </ul>
+
+        <p>copyOfNamesList</p>
+
+        <ol>
+            <li ng-repeat="cn in copyOfNamesList">
+                {{cn}}
+            </li>
+        </ol>
+
+        <ol>
+            <li ng-repeat="cn in men">
+                {{cn.name}}
+            </li>
+        </ol>
+       </div>
+
+       <script>
+        const mathModule = angular.module("math", []);
+
+        mathModule.controller("operation", function($scope){
+
+            $scope.namesList = [];
+            $scope.copyOfNamesList = angular.copy($scope.namesList); // deep copy
+            // $scope.copyOfNamesList = $scope.namesList; // shallow copy
+
+            $scope.women = [];
+            $scope.men = [];
+
+            let users = [
+                {
+                    name : "Vignesh",
+                    gender : "M"
+                },
+                {
+                    name : "Karthi",
+                    gender : "M"
+                },
+                {
+                    name : "Raj",
+                    gender : "M"
+                },
+                {
+                    name : "Selvi",
+                    gender : "F"
+                },
+                {
+                    name : "Suji",
+                    gender : "F"
+                },
+                {
+                    name : "Keerthi",
+                    gender : "F"
+                }
+            ]
+
+
+            $scope.addToList = ()=>{
+                $scope.namesList.push($scope.username)
+                
+            }
+
+            $scope.getUsers = ()=>{
+            //    $scope.men = users.filter((u)=>{
+            //         if(u.gender == 'M'){
+            //             return true
+            //         }
+            //     })
+
+            $scope.men = users.filter((u)=>u.gender == 'M')
+
+                $scope.women = users.filter((u)=>{
+                    if(u.gender == 'F'){
+                        return true
+                    }
+                })
+
+                console.log($scope.men)
+            }
+
+            
+
+
+        })
+       </script>
+        
+
+    </body>
+
+</html>
