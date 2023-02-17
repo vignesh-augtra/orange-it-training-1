@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+    </script>
+
+
+</head>
+
+
+    <body ng-app="api">
+
+       <div ng-controller="apiController">
+
+        <img ng-src="{{imgSrc}}"/>
+
+        <button ng-click="frameData()">Get Data</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Pic</th>
+                    <th>Title</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="photo in photos">
+                    <td> 
+                        <img ng-src="{{photo.url}}" />
+                     </td>
+                     <td>
+                        {{photo.title}}
+                     </td>
+                   
+                </tr>
+            </tbody>
+        </table>
+
+       </div>
+
+       <script>
+        const mathModule = angular.module("api", []);
+
+        mathModule.controller("apiController", function($scope, $http){
+
+
+            $scope.imgSrc = "https://via.placeholder.com/600/771796";
+
+            $scope.frameData = ()=>{
+
+               $http({
+                url:"https://jsonplaceholder.typicode.com/photos",
+                method:"GET"
+               }).then(
+                (response)=>{
+                    console.log(response)
+
+                    $scope.photos = response.data;
+                },
+
+                (err)=>{
+                    console.error(err)
+                }
+               )
+
+            }
+            
+
+            
+
+
+        })
+       </script>
+        
+
+    </body>
+
+</html>
