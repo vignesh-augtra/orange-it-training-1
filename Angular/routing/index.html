@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src = "https://unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./controllers/login.js"></script>
+    <script src="./controllers/landing.js"></script>
+    <script src="./controllers/signup.js"></script>
+
+</head>
+
+    <body ng-app="myRouterApp" ng-controller="landingController" ng-init="init()">
+
+        <button ng-click="goToLogin()">Login</button>
+        <button ng-click="goToSignup()">Signup</button>
+        
+        <div ui-view></div>
+    </body>
+
+
+</html>
