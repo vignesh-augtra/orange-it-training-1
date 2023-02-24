@@ -1,0 +1,15 @@
+<div ng-init="init()">
+    <h1>Todo Tasks</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s3" ng-repeat="t in todos">
+                <div class="card same-height">
+                    <div class="card-content">
+                            <p ng-bind="t.title"> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
