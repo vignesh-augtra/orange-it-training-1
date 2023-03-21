@@ -5,3 +5,19 @@
 
     <input type="submit"/>
 </form>
+
+<form ng-submit="userFormSubmission()">
+
+    <label>Username</label>
+    <input type="text" ng-model="userForm.username" required/>
+
+    <div ng-repeat = "language in userForm.knownlanguages">
+        <label>Language {{$index + 1}}</label>
+        <input type="text" ng-model="userForm.knownlanguages[$index]" required/>
+        <button ng-click="addOneLanguage()">+</button>
+        <button ng-click="removeOneLanguage($index)">-</button>
+    </div>
+
+    <input type="submit"/>
+
+</form>
