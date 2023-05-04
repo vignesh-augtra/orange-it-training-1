@@ -61,3 +61,61 @@ def checkUser(data):
     
 
 
+
+# Tasks related functions
+def createTask(data):
+    try:
+        insertQuery = "insert into tasks (user_id, task_name, end_time) values (%s, %s, %s)"
+        connection = mysql.connect()
+        cursor = connection.cursor()
+        cursor.execute(insertQuery, (data['user_id'], data['task_name'], data['end_time']))
+        connection.commit()
+        cursor.close()
+        return None
+    except Exception as e:
+        return e
+
+def getTasksByUserId(data):
+    try:
+        connection = mysql.connect()
+        cursor = connection.cursor()
+        fetchQuery = "select * from tasks where user_id = %s and is_deleted = 0"
+
+        cursor.execute(fetchQuery, (data['user_id']))
+        listOfTasks = list(cursor.fetchall())
+        returnObject = []
+
+        for oneTask in listOfTasks:
+            returnObject.append({
+                "id":oneTask[0],
+                "user_id":oneTask[1],
+                "task_name":oneTask[2],
+                "status":oneTask[3],
+                "end_time":oneTask[4],
+                "created_on":oneTask[5],
+            })
+        
+        return {
+            "error":False,
+            "data":returnObject
+        }
+    except Exception as e:
+        return {
+            "error":True,
+            "data" : []
+        }
+    
+
+def deleteTask(data):
+    try:
+        connection = mysql.connect()
+        cursor = connection.cursor()
+        updateQuery = "update tasks set is_deleted = 1 where id = %s"
+        cursor.execute(updateQuery, (data['task_id']))
+        connection.commit()
+        cursor.close()
+        return None
+    except Exception as e:
+        return e
+
+

@@ -45,7 +45,14 @@ CREATE TABLE `orange_todo`.`tasks` (
     ON DELETE CASCADE
     ON UPDATE NO ACTION);
 
-	
+ALTER TABLE `orange_todo`.`tasks` 
+CHANGE COLUMN `end_time` `end_time` VARCHAR(100) NOT NULL ;
+
+
+ALTER TABLE `orange_todo`.`tasks` 
+ADD COLUMN `status` VARCHAR(45) NOT NULL DEFAULT 'new' AFTER `task_name`;
+
+
 
 API:
 	USERS:

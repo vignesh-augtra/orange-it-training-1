@@ -68,6 +68,65 @@ def login():
         })
 
 
+@todo.route("/api/tasks/create", methods=['POST'])
+def createTask():
+
+    # "user_id":"12",
+    # "task_name":"Session",
+    # "end_time":"2013-05-10T06:14:52.238"
+
+
+    requestData = request.get_json()
+    Error = sql_handler.createTask(requestData)
+
+    if(Error):
+        return jsonify({
+            "isError":True,
+            "message":str(Error)
+        }), 502
+    else :
+         return jsonify({
+            "isError":False,
+            "message":"Ok"
+        })
+    
+@todo.route("/api/tasks/get", methods=['POST'])
+def getTasks():
+
+    # {
+    # "user_id":"12"
+    # }
+    requestData = request.get_json()
+    responseData = sql_handler.getTasksByUserId(requestData)
+
+    if(responseData["error"]):
+        return jsonify({
+            "isError":True,
+            "message":str(responseData["error"])
+        }), 502
+    else :
+         return jsonify({
+            "isError":False,
+            "message":responseData
+        })
+
+
+@todo.route("/api/tasks/delete", methods=['POST'])
+def deleteTask():
+    requestData = request.get_json()
+    Error = sql_handler.deleteTask(requestData)
+
+    if(Error):
+        return jsonify({
+            "isError":True,
+            "message":str(Error)
+        }), 502
+    else :
+         return jsonify({
+            "isError":False,
+            "message":"Ok"
+        })
+
 
 if __name__ == '__main__':
     todo.run(port=5000)
