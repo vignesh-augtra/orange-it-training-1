@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+
+    <link href="./lib/css/materialize.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="./style.css" rel="stylesheet"/>
+
+    <script src="./lib/js/angular.min.js"></script>
+    <script src="./lib/js/ui.router.js"></script>
+    <script src="./lib/js/materialize.js"></script>
+
+    <script src="app.js"></script>
+
+    <script src="./services/apiCall.js"></script>
+
+    <script src="./controllers/index.js"></script>
+    <script src="./controllers/login.js"></script>
+    <script src="./controllers/signup.js"></script>
+
+
+    
+
+</head>
+<body ng-app="todo" ng-controller="index" ng-init="init()">
+
+
+    <nav>
+        <div class="nav-wrapper">
+          <a class="brand-logo">Todo</a>
+        </div>
+      </nav>
+
+
+
+    <div ui-view></div>
+
+
+    
+</body>
+</html>

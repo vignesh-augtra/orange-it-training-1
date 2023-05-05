@@ -60,7 +60,7 @@ def login():
         return jsonify({
             "isError":True,
             "message":str(Error)
-        }), 502
+        })
     else :
          return jsonify({
             "isError":False,
