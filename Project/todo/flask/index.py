@@ -117,7 +117,7 @@ def deleteTask():
     Error = sql_handler.deleteTask(requestData)
 
     if(Error):
-        return jsonify({
+        return jsonify({ 
             "isError":True,
             "message":str(Error)
         }), 502

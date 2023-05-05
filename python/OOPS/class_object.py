@@ -22,7 +22,7 @@ kashmiriChilli = ChilliPowder("Kashimiri Chilli", "Dark Red", 30, True )
 ruralChilli = ChilliPowder("Naatu Chilli", "Red", 100, True )
 poisonChilli = ChilliPowder("Killer Chilli", "Brown", 1, False )
 
-print(kashmiriChilli.name)
+print(kashmiriChilli.name1)
 print(kashmiriChilli.canSmell())
 
 print(ruralChilli.name)
