@@ -54,17 +54,17 @@ def signup():
 @todo.route("/api/user/login", methods=['POST'])
 def login():
     requestData = request.get_json()
-    Error = sql_handler.checkUser(requestData)
+    responseFromDb = sql_handler.checkUser(requestData)
 
-    if(Error):
+    if(responseFromDb["isError"]):
         return jsonify({
             "isError":True,
-            "message":str(Error)
+            "message":str(responseFromDb["message"])
         })
     else :
          return jsonify({
             "isError":False,
-            "message":"Ok"
+            "message":responseFromDb["message"]
         })
 
 

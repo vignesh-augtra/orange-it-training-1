@@ -1,0 +1,29 @@
+<div ng-init="getAllTasks()">
+    <div class="row">
+        <div class="col right">
+            <a class="btn green">create</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="highlight centered">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Task Name</th>
+                    <th>Status</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="task in tasks ">
+                    <td> {{$index + 1}} </td>
+                    <td> {{task.task_name}} </td>
+                    <td> {{task.status}} </td>
+                    <td ng-bind="formatDate(task.end_time)" > </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

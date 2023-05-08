@@ -1,4 +1,6 @@
-todo.controller("login", function($scope, $state, apiCall){
+todo.controller("login", function($scope, $state, apiCall, exceptionHandler){
+
+
 
 
     $scope.goToSignup = ()=>{
@@ -6,23 +8,30 @@ todo.controller("login", function($scope, $state, apiCall){
     }
 
     $scope.handleLoginSubmit = async ()=>{
-        console.log($scope.loginForm)
 
-        let paramToApiRequest = {
-            method:"POST",
-            endPoint : "api/user/login",
-            data : $scope.loginForm
-        }
-
-        let loginResponse = await apiCall.request(paramToApiRequest);
-
-        if(loginResponse.isError){
-            M.toast({
-                html:loginResponse.message,
-                class:"red rounded"
-            })
-        } else {
-            alert("Success")
+        try{
+            let paramToApiRequest = {
+                method:"POST",
+                endPoint : "api/user/login",
+                data : $scope.loginForm
+            }
+    
+            let loginResponse = await apiCall.request(paramToApiRequest);
+    
+            if(loginResponse.isError){
+                M.toast({
+                    html:loginResponse.message,
+                    classes:"rounded red"
+                })
+            } else {
+    
+                let responseString = JSON.stringify(loginResponse.message.userData);
+                window.localStorage.setItem("userData", responseString)
+                $state.go("tasks")
+    
+            }
+        } catch(e){
+            exceptionHandler.show(e)
         }
     }
 
