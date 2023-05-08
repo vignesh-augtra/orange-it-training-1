@@ -6,3 +6,15 @@ h1, h2, h3, h4, h5, h6, p{
 .login-card{
     margin-top: 20%;
 }
+
+
+#toast-container {
+    top: 5% !important;
+    right: 3% !important;
+    bottom: auto !important;
+    left:auto !important;
+  }
+
+nav{
+    margin-bottom: 15px !important;
+}

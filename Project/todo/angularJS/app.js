@@ -15,4 +15,10 @@ todo.config(($stateProvider)=>{
         templateUrl:"views/signup.html"
     })
 
+    .state("tasks", {
+        url:"/tasks",
+        controller:"tasks",
+        templateUrl:"views/tasks.html"
+    })
+
 })

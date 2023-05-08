@@ -44,20 +44,39 @@ def checkUser(data):
 
         cursor.execute(selectQuery, (data['username']))
         # fetching the data and converting it to list
-        userData = list(cursor.fetchall())
+        userData = list(cursor.fetchall()) 
 
         if len(userData) == 0:
-            return "User Not Found"
+            return {
+                "isError":True,
+                "message":"User Not Found"
+            }
         else:
             hashedPasswordFromDb = userData[0][2]
             isPasswordMatching = password_handler.check(data['password'], hashedPasswordFromDb)
 
             if(isPasswordMatching):
-                return None
+                return {
+                    "isError":False,
+                    "message":{
+                        "userData" : {
+                            "id":userData[0][0],
+                            "username":userData[0][1],
+                            "dob":userData[0][3],
+                            "createdOn":userData[0][4],
+                        }
+                    }
+                }
             else:
-                return "Password Mismatch"
+                return {
+                    "isError":True,
+                    "message":"Password Mismatch"
+                }
     except Exception as e:
-        return e
+        return {
+                "isError":True,
+                "message":str(e)
+            }
     
 
 
